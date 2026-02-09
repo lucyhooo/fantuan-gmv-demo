@@ -46,6 +46,35 @@
     button { border:0; background:#111; color:#fff; padding: 10px 12px; border-radius: 12px; font-size: 13px; cursor:pointer; }
     button.secondary { background:#fff; color:#111; border:1px solid #e5e7eb; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* 1. 优化手机横屏：横过来时像电脑一样左右并排 */
+@media (orientation: landscape) and (max-height: 500px) {
+    .grid {
+        grid-template-columns: 1fr 1fr !important; /* 强制左右分成两半 */
+        gap: 15px !important;
+    }
+    .container {
+        max-width: 95% !important; /* 横屏时利用几乎全部宽度 */
+        padding: 10px !important;
+    }
+    header {
+        margin-bottom: 10px !important; /* 缩小标题间距省空间 */
+    }
+}
+
+/* 2. 微调竖屏精致感：让手机第一屏显示更多内容 */
+@media (max-width: 900px) {
+    .card {
+        padding: 12px !important; /* 缩小卡片内边距 */
+    }
+    input, select {
+        padding: 8px !important; /* 缩小输入框高度 */
+    }
+    h2 {
+        font-size: 16px !important; /* 缩小副标题 */
+    }
+}
+    
   </style>
 </head>
 <body>
